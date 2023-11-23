@@ -20,6 +20,44 @@ const theme = extendTheme({
                 secondary: orange
             }
         }
+    },
+    components: {
+        MuiButton: {
+            styleOverrides: {
+                root: {
+                    textTransform: 'none'
+                }
+            }
+        },
+        MuiInputLabel: {
+            styleOverrides: {
+                root: ({ theme }) => ({
+                    color: theme.palette.primary.main,
+                    fontSize: '0.875rem'
+                })
+            }
+        },
+        MuiOutlinedInput: {
+            styleOverrides: {
+                root: ({ theme }) => ({
+                    color: theme.palette.primary.main,
+                    fontSize: '0.875rem',
+                    //Chỉnh sửa thuộc tính của các muiOutlinedInput
+                    '.MuiOutlinedInput-notchedOutline': {
+                        borderColor: theme.palette.primary.light
+                    },
+                    '&:hover': {
+                        '.MuiOutlinedInput-notchedOutline': {
+                            borderColor: theme.palette.primary.main
+                        }
+                    },
+                    //Chỉnh sửa độ đậm nhạt đường viền các thẻ input...
+                    '& fieldset': {
+                        borderWidth: '1px !important'
+                    }
+                })
+            }
+        }
     }
 })
 
