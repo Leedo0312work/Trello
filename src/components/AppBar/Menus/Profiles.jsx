@@ -31,7 +31,7 @@ function Profiles() {
           aria-expanded={open ? 'true' : undefined}
         >
           <Avatar
-            sx={{ width: 34, height: 34 }}
+            sx={{ width: 36, height: 36 }}
             src="https://www.nawpic.com/media/2020/gojo-nawpic-16-e1627160527336.jpg"
             alt='Lê Quý Độ'
           />

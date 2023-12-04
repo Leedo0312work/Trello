@@ -1,5 +1,5 @@
 import { experimental_extendTheme as extendTheme } from '@mui/material/styles'
-import { cyan, deepOrange, orange, teal } from '@mui/material/colors'
+//import { cyan, deepOrange, orange, teal } from '@mui/material/colors'
 
 
 const theme = extendTheme({
@@ -8,34 +8,34 @@ const theme = extendTheme({
     boardBarHeight: '60px'
   },
   colorSchemes: {
-    light: {
-      palette: {
-        primary: teal,
-        secondary: deepOrange
-      }
-    },
-    dark: {
-      palette: {
-        primary: cyan,
-        secondary: orange
-      }
-    }
+    // light: {
+    //   palette: {
+    //     primary: teal,
+    //     secondary: deepOrange
+    //   }
+    // },
+    // dark: {
+    //   palette: {
+    //     primary: cyan,
+    //     secondary: orange
+    //   }
+    // }
   },
   components: {
     MuiCssBaseline: {
       styleOverrides: {
         body: {
+          //Style thanh cuộn
           '*::-webkit-scrollbar': {
             width: '8px',
             height: '8px'
           },
           '*::-webkit-scrollbar-thumb': {
-            backgroundColor: '#bdc3c7',
+            backgroundColor: '#dcdde1',
             borderRadius: '8px'
           },
           '*::-webkit-scrollbar-thumb:hover': {
-            backgroundColor: '#00b894',
-            borderRadius: '8px'
+            backgroundColor: 'white'
           }
         }
       }
@@ -43,37 +43,35 @@ const theme = extendTheme({
     MuiButton: {
       styleOverrides: {
         root: {
-          textTransform: 'none'
+          textTransform: 'none',
+          borderWidth: '0.5px',
+          '&:hover ': { borderWidth: '0.5px' }
         }
       }
     },
     MuiInputLabel: {
       styleOverrides: {
-        root: ({ theme }) => ({
-          color: theme.palette.primary.main,
-          fontSize: '0.875rem'
-        })
+        root: { fontSize: '0.875rem' }
       }
     },
     MuiOutlinedInput: {
       styleOverrides: {
-        root: ({ theme }) => ({
-          color: theme.palette.primary.main,
+        root: {
           fontSize: '0.875rem',
           //Chỉnh sửa thuộc tính của các muiOutlinedInput
-          '.MuiOutlinedInput-notchedOutline': {
-            borderColor: theme.palette.primary.light
-          },
-          '&:hover': {
-            '.MuiOutlinedInput-notchedOutline': {
-              borderColor: theme.palette.primary.main
-            }
-          },
+          // '.MuiOutlinedInput-notchedOutline': {
+          //   borderColor: theme.palette.primary.light
+          // },
+          // '&:hover': {
+          //   '.MuiOutlinedInput-notchedOutline': {
+          //     borderColor: theme.palette.primary.main
+          //   }
+          // },
           //Chỉnh sửa độ đậm nhạt đường viền các thẻ input...
-          '& fieldset': {
-            borderWidth: '1px !important'
-          }
-        })
+          '& fieldset': { borderWidth: '0.5px !important' },
+          '&:hover fieldset': { borderWidth: '1px !important' },
+          '&.Mui-focused fieldset': { borderWidth: '1px !important' }
+        }
       }
     }
   }
