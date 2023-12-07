@@ -36,7 +36,6 @@ function BoardBar() {
       gap: 2,
       paddingX: 2,
       overflowX: 'auto', //Tinh chỉnh scrollbar cuộn over
-      borderBottom: '1px solid white',
       bgcolor: (theme) => (theme.palette.mode === 'dark' ? '#34495e' : '#1976d2')
     }}>
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
@@ -72,10 +71,10 @@ function BoardBar() {
         />
       </Box>
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-        <Button 
-          variant="outlined" 
+        <Button
+          variant="outlined"
           startIcon={<PersonAddIcon/>}
-          sx={{ 
+          sx={{
             color:'white',
             borderColor: 'white',
             '&:hover' :{ borderColor : 'white' }

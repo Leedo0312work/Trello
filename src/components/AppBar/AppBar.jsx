@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import Box from '@mui/material/Box'
-import ModeSelect from '~/components/ModeSelect'
+import ModeSelect from '~/components/ModeSelect/ModeSelect'
 import AppsIcon from '@mui/icons-material/Apps'
 import { ReactComponent as trelloIcon } from '~/assets/trello.svg'
 import SvgIcon from '@mui/material/SvgIcon'
@@ -48,7 +48,7 @@ function AppBar() {
           <Starred />
           <Templates />
           <Button
-            sx={{ 
+            sx={{
               color: 'white',
               border: 'none',
               '&:hover': {
@@ -83,7 +83,7 @@ function AppBar() {
               <InputAdornment position="end">
                 <CloseIcon
                   fontSize='small'
-                  sx={{ color: searchValue ? 'white' : 'transparent', cursor: 'pointer'}}
+                  sx={{ color: searchValue ? 'white' : 'transparent', cursor: 'pointer' }}
                   onClick = {() => setSearchValue('')}
                 />
               </InputAdornment>
@@ -92,13 +92,13 @@ function AppBar() {
           sx={{
             minWidth: '120px',
             maxWidth: '180px',
-            '& label': {color:'white'},
-            '& input': {color:'white'},
-            '& label.Mui-focused': {color:'white'},
+            '& label': { color:'white' },
+            '& input': { color:'white' },
+            '& label.Mui-focused': { color:'white' },
             '& .MuiOutlinedInput-root': {
-              '& fieldset': {borderColor: 'white'},
-              '&:hover fieldset': {borderColor: 'white'},
-              '&.Mui-focused fieldset': {borderColor: 'white'}
+              '& fieldset': { borderColor: 'white' },
+              '&:hover fieldset': { borderColor: 'white' },
+              '&.Mui-focused fieldset': { borderColor: 'white' }
             }
           }}
         />
