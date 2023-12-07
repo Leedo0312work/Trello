@@ -92,7 +92,10 @@ function BoardBar() {
               width: 34,
               height: 34,
               fontSize: '16px',
-              border: 'none'
+              border: 'none',
+              color: 'white',
+              cursor: 'pointer',
+              '&:first-of-type': {bgcolor : '#a4b0be'}
             }
           }}
         >
@@ -116,6 +119,22 @@ function BoardBar() {
               alt="Leedo"
               src="https://www.nawpic.com/media/2020/gojo-nawpic-16-e1627160527336.jpg" />
           </Tooltip>
+          <Tooltip title="Leedo">
+            <Avatar
+              alt="Leedo"
+              src="https://www.nawpic.com/media/2020/gojo-nawpic-16-e1627160527336.jpg" />
+          </Tooltip>
+          <Tooltip title="Leedo">
+            <Avatar
+              alt="Leedo"
+              src="https://www.nawpic.com/media/2020/gojo-nawpic-16-e1627160527336.jpg" />
+          </Tooltip>
+          <Tooltip title="Leedo">
+            <Avatar
+              alt="Leedo"
+              src="https://www.nawpic.com/media/2020/gojo-nawpic-16-e1627160527336.jpg" />
+          </Tooltip>
+
           <Tooltip title="Leedo">
             <Avatar
               alt="Leedo"
