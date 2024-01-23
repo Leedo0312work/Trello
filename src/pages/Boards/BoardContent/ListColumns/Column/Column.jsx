@@ -18,7 +18,7 @@ import Box from '@mui/material/Box'
 import ListCard from './ListCards/ListCard'
 import { mapOrder } from '~/utils/sorts'
 
-function Column({column}) {
+function Column({ column }) {
   const [anchorEl, setAnchorEl] = React.useState(null)
   const open = Boolean(anchorEl)
   const handleClick = (event) => {setAnchorEl(event.currentTarget) }

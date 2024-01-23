@@ -26,8 +26,7 @@ const MENU_STYLES = {
   }
 }
 
-function BoardBar({board}) {
-  
+function BoardBar({ board }) {
   return (
     <Box sx={{
       width: '100%',
@@ -96,7 +95,7 @@ function BoardBar({board}) {
               border: 'none',
               color: 'white',
               cursor: 'pointer',
-              '&:first-of-type': {bgcolor : '#a4b0be'}
+              '&:first-of-type': { bgcolor : '#a4b0be' }
             }
           }}
         >

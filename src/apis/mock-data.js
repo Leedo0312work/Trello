@@ -19,10 +19,10 @@ export const mockData = {
             boardId: 'board-id-01',
             columnId: 'column-id-01',
             title: 'Title of card 01',
-            description: 'Markdown Syntax (sẽ ở khóa nâng cao nhé)',
+            description: 'Markdown Syntax ',
             cover: 'https://www.seiu1000.org/sites/main/files/imagecache/hero/main-images/camera_lense_0.jpeg',
             memberIds: ['test-user-id-01'],
-            comments: ['test comment 01', 'test comment 02'],
+            comments: ['test comment 01', 'test comment 02', 'test comment 03', 'test comment 04'],
             attachments: ['test attachment 01', 'test attachment 02', 'test attachment 03']
           },
           { _id: 'card-id-02', boardId: 'board-id-01', columnId: 'column-id-01', title: 'Title of card 02', description: null, cover: null, memberIds: [], comments: [], attachments: [] },
