@@ -3,12 +3,12 @@ import Column from './Column/Column'
 import { Button } from '@mui/material'
 import NoteAddIcon from '@mui/icons-material/NoteAdd'
 import { SortableContext, horizontalListSortingStrategy } from '@dnd-kit/sortable'
-function ListColumns({ columns }) {
 
+function ListColumns({ columns }) {
   return (
     // https://github.com/clauderic/dnd-kit/issues/183#issuecomment-812569512
     // SortableContext yêu cầu items là một mảng dạng dữ liệu nguyên thủy, không phải là dạng Json-gây ảnh hưởng đến giá trị items
-    <SortableContext items={columns?.map(c => c._id)} strategy={horizontalListSortingStrategy}>
+    <SortableContext items={columns?.map(column => column._id)} strategy={horizontalListSortingStrategy}>
       <Box sx={{
         bgcolor: 'inherit',
         width: '100%',
@@ -16,10 +16,10 @@ function ListColumns({ columns }) {
         display: 'flex',
         overflowX: 'auto',
         overflowY: 'hidden',
-        '&::-webkit-scrollbar-track': { m:2 }
+        '&::-webkit-scrollbar-track': { m: 2 }
       }}>
 
-        {columns?.map( column => <Column key={column?._id} column = {column}/> )}
+        {columns?.map(column => <Column key={column?._id} column={column} />)}
 
         {/* Box add new column CTA */}
         <Box sx={{
