@@ -11,10 +11,14 @@ import {
   useSensors,
   DragOverlay,
   defaultDropAnimationSideEffects,
-  closestCorners
+  closestCorners,
+  closestCenter,
+  pointerWithin,
+  rectIntersection,
+  getFirstCollision
 } from '@dnd-kit/core'
 import { arrayMove } from '@dnd-kit/sortable'
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { cloneDeep } from 'lodash'
 
 import Column from './ListColumns/Column/Column'
@@ -49,6 +53,8 @@ function BoardContent({ board }) {
   // In order to take start column, add state for it because state will change in handleDragOver
   const [oldColumnDraggingCard, setOldColumnDraggingCard] = useState(null)
 
+  //Điểm va chạm cuối cùng trước đó
+  const lastOverId = useRef(null)
 
   useEffect(() => {
     const orderedColumns = mapOrder(board?.columns, board?.columnOrderIds, '_id')
@@ -245,10 +251,49 @@ function BoardContent({ board }) {
     })
   }
 
+  const collisionDetectionStrategy = useCallback((args) => {
+    if (activeDragItemType === ACTIVE_DRAG_ITEM_TYPE.COLUMN) {
+      return closestCorners({ ...args })
+    }
+
+    //Tìm các điểm giao nhau va chạm với con trỏ
+    const pointerIntersections = pointerWithin(args)
+
+    //Thuật toán phát hiện va chạm trả về một mảng các va chạm
+    const intersections = !!pointerIntersections?.length
+      ? pointerIntersections
+      : rectIntersection(args)
+    //Tìm overId trong intersections đầu
+    let overId = getFirstCollision(intersections, 'id')
+    if (overId) {
+      console.log('overId before: ', overId)
+      //Trả về cardId gần nhất bên trong khu vực va chạm nếu over là column
+      const checkCol = orderedColumnsState.find(col => col._id === overId)
+      if (checkCol) {
+        overId = closestCenter({
+          ...args,
+          droppableContainers: args.droppableContainers.filter(container => {
+            return (container.id !== overId) && (checkCol?.cardOrderIds?.includes(container.id))
+          })
+        })[0]?.id
+      }
+      console.log('overId after: ', overId)
+
+      lastOverId.current = overId
+      return [{ id: overId }]
+    }
+
+    //Nếu overId null
+    return lastOverId.current ? [{ id: lastOverId.current }] : []
+
+  }, [activeDragItemType, orderedColumnsState])
+
   return (
     <DndContext
       sensors={sensors}
-      collisionDetection={closestCorners}
+
+      //collisionDetection={closestCorners}
+      collisionDetection={collisionDetectionStrategy}
       onDragStart={handleDragStart}
       onDragOver={handleDragOver}
       onDragEnd={handleDragEnd}
