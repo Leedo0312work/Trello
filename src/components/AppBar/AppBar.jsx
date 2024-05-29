@@ -24,44 +24,56 @@ function AppBar() {
   const [searchValue, setSearchValue] = useState('')
 
   return (
-    <Box sx={{
-      width: '100%',
-      height: (theme) => theme.trello.appBarHeight,
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'space-between',
-      paddingX: 2,
-      gap: 2,
-      overflowX: 'auto', //Tinh chỉnh scrollbar
-      bgcolor: (theme) => (theme.palette.mode === 'dark' ? '#2c3e50' : '#1565c0')
-    }}>
+    <Box
+      sx={{
+        width: '100%',
+        height: (theme) => theme.trello.appBarHeight,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        paddingX: 2,
+        gap: 2,
+        overflowX: 'auto', //Tinh chỉnh scrollbar
+        bgcolor: (theme) =>
+          theme.palette.mode === 'dark' ? '#2c3e50' : '#29669c',
+      }}
+    >
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
         <AppsIcon sx={{ color: 'white' }} />
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
-          <SvgIcon component={trelloIcon} fontSize='small' inheritViewBox sx={{ color: 'white' }} />
-          <Typography variant='span' sx={{ fontSize: '1.2rem', fontweight: 'bold', color: 'white' }}>Trello</Typography>
+          <SvgIcon
+            component={trelloIcon}
+            fontSize="small"
+            inheritViewBox
+            sx={{ color: 'white' }}
+          />
+          <Typography
+            variant="span"
+            sx={{ fontSize: '1.2rem', fontweight: 'bold', color: 'white' }}
+          >
+            Trello
+          </Typography>
         </Box>
 
         <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 1 }}>
           <Workspaces />
           <Recent />
-          <Starred />
-          <Templates />
+          {/* <Starred />
+          <Templates /> */}
           <Button
             sx={{
               color: 'white',
               border: 'none',
               '&:hover': {
-                border: 'none'
-              }
+                border: 'none',
+              },
             }}
             variant="outlined"
             startIcon={<LibraryAddIcon />}
           >
-              Create
+            Create
           </Button>
         </Box>
-
       </Box>
 
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
@@ -69,37 +81,40 @@ function AppBar() {
           id="outlined-search"
           label="Search..."
           type="text"
-          size='small'
+          size="small"
           value={searchValue}
           onChange={(e) => setSearchValue(e.target.value)}
           //Style cho input search
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
-                <SearchIcon sx={{ color: 'white' }}/>
+                <SearchIcon sx={{ color: 'white' }} />
               </InputAdornment>
             ),
             endAdornment: (
               <InputAdornment position="end">
                 <CloseIcon
-                  fontSize='small'
-                  sx={{ color: searchValue ? 'white' : 'transparent', cursor: 'pointer' }}
-                  onClick = {() => setSearchValue('')}
+                  fontSize="small"
+                  sx={{
+                    color: searchValue ? 'white' : 'transparent',
+                    cursor: 'pointer',
+                  }}
+                  onClick={() => setSearchValue('')}
                 />
               </InputAdornment>
-            )
+            ),
           }}
           sx={{
             minWidth: '120px',
             maxWidth: '180px',
-            '& label': { color:'white' },
-            '& input': { color:'white' },
-            '& label.Mui-focused': { color:'white' },
+            '& label': { color: 'white' },
+            '& input': { color: 'white' },
+            '& label.Mui-focused': { color: 'white' },
             '& .MuiOutlinedInput-root': {
               '& fieldset': { borderColor: 'white' },
               '&:hover fieldset': { borderColor: 'white' },
-              '&.Mui-focused fieldset': { borderColor: 'white' }
-            }
+              '&.Mui-focused fieldset': { borderColor: 'white' },
+            },
           }}
         />
 

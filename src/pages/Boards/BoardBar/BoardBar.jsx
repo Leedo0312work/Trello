@@ -19,26 +19,29 @@ const MENU_STYLES = {
   paddingX: '5px',
   borderRadius: '4px',
   '.MuiSvgIcon-root': {
-    color: 'white'
+    color: 'white',
   },
   '&:hover': {
-    bgcolor: 'primary.50'
-  }
+    bgcolor: 'primary.50',
+  },
 }
 
 function BoardBar({ board }) {
   return (
-    <Box sx={{
-      width: '100%',
-      height: (theme) => theme.trello.boardBarHeight,
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'space-between',
-      gap: 2,
-      paddingX: 2,
-      overflowX: 'auto', //Tinh chỉnh scrollbar cuộn over
-      bgcolor: (theme) => (theme.palette.mode === 'dark' ? '#34495e' : '#1976d2')
-    }}>
+    <Box
+      sx={{
+        width: '100%',
+        height: (theme) => theme.trello.boardBarHeight,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        gap: 2,
+        paddingX: 2,
+        overflowX: 'auto', //Tinh chỉnh scrollbar cuộn over
+        bgcolor: (theme) =>
+          theme.palette.mode === 'dark' ? '#34495e' : '#255c8e',
+      }}
+    >
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
         <Chip
           sx={MENU_STYLES}
@@ -58,7 +61,7 @@ function BoardBar({ board }) {
           label="Add to Google Drive"
           clickable
         />
-        <Chip
+        {/* <Chip
           sx={MENU_STYLES}
           icon={<BoltIcon />}
           label="Automation"
@@ -69,25 +72,25 @@ function BoardBar({ board }) {
           icon={<FilterListIcon />}
           label="Filters"
           clickable
-        />
+        /> */}
       </Box>
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
         <Button
           variant="outlined"
-          startIcon={<PersonAddIcon/>}
+          startIcon={<PersonAddIcon />}
           sx={{
-            color:'white',
+            color: 'white',
             borderColor: 'white',
-            '&:hover' :{ borderColor : 'white' }
+            '&:hover': { borderColor: 'white' },
           }}
         >
-            Invite
+          Invite
         </Button>
 
         <AvatarGroup
-          max={7}
+          max={5}
           sx={{
-            gap:'10px',
+            gap: '10px',
             '& .MuiAvatar-root': {
               width: 34,
               height: 34,
@@ -95,66 +98,75 @@ function BoardBar({ board }) {
               border: 'none',
               color: 'white',
               cursor: 'pointer',
-              '&:first-of-type': { bgcolor : '#a4b0be' }
-            }
+              '&:first-of-type': { bgcolor: '#a4b0be' },
+            },
           }}
         >
           <Tooltip title="Leedo">
             <Avatar
               alt="Leedo"
-              src="https://www.nawpic.com/media/2020/gojo-nawpic-16-e1627160527336.jpg" />
+              src="https://www.nawpic.com/media/2020/gojo-nawpic-16-e1627160527336.jpg"
+            />
           </Tooltip>
           <Tooltip title="Leedo">
             <Avatar
               alt="Leedo"
-              src="https://www.nawpic.com/media/2020/gojo-nawpic-16-e1627160527336.jpg" />
+              src="https://www.nawpic.com/media/2020/gojo-nawpic-16-e1627160527336.jpg"
+            />
           </Tooltip>
           <Tooltip title="Leedo">
             <Avatar
               alt="Leedo"
-              src="https://www.nawpic.com/media/2020/gojo-nawpic-16-e1627160527336.jpg" />
+              src="https://www.nawpic.com/media/2020/gojo-nawpic-16-e1627160527336.jpg"
+            />
           </Tooltip>
           <Tooltip title="Leedo">
             <Avatar
               alt="Leedo"
-              src="https://www.nawpic.com/media/2020/gojo-nawpic-16-e1627160527336.jpg" />
+              src="https://www.nawpic.com/media/2020/gojo-nawpic-16-e1627160527336.jpg"
+            />
           </Tooltip>
           <Tooltip title="Leedo">
             <Avatar
               alt="Leedo"
-              src="https://www.nawpic.com/media/2020/gojo-nawpic-16-e1627160527336.jpg" />
+              src="https://www.nawpic.com/media/2020/gojo-nawpic-16-e1627160527336.jpg"
+            />
           </Tooltip>
           <Tooltip title="Leedo">
             <Avatar
               alt="Leedo"
-              src="https://www.nawpic.com/media/2020/gojo-nawpic-16-e1627160527336.jpg" />
+              src="https://www.nawpic.com/media/2020/gojo-nawpic-16-e1627160527336.jpg"
+            />
           </Tooltip>
           <Tooltip title="Leedo">
             <Avatar
               alt="Leedo"
-              src="https://www.nawpic.com/media/2020/gojo-nawpic-16-e1627160527336.jpg" />
+              src="https://www.nawpic.com/media/2020/gojo-nawpic-16-e1627160527336.jpg"
+            />
           </Tooltip>
 
           <Tooltip title="Leedo">
             <Avatar
               alt="Leedo"
-              src="https://www.nawpic.com/media/2020/gojo-nawpic-16-e1627160527336.jpg" />
+              src="https://www.nawpic.com/media/2020/gojo-nawpic-16-e1627160527336.jpg"
+            />
           </Tooltip>
           <Tooltip title="Leedo">
             <Avatar
               alt="Leedo"
-              src="https://www.nawpic.com/media/2020/gojo-nawpic-16-e1627160527336.jpg" />
+              src="https://www.nawpic.com/media/2020/gojo-nawpic-16-e1627160527336.jpg"
+            />
           </Tooltip>
           <Tooltip title="Leedo">
             <Avatar
               alt="Leedo"
-              src="https://www.nawpic.com/media/2020/gojo-nawpic-16-e1627160527336.jpg" />
+              src="https://www.nawpic.com/media/2020/gojo-nawpic-16-e1627160527336.jpg"
+            />
           </Tooltip>
         </AvatarGroup>
       </Box>
     </Box>
   )
-
 }
 
 export default BoardBar
