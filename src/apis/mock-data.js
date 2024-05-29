@@ -3,15 +3,15 @@ export const mockData = {
     _id: 'board-id-01',
     title: 'Board',
     description: 'none',
-    type: 'public', // 'private'
-    ownerIds: [], // Những users là Admin của board
-    memberIds: [], // Những users là member bình thường của board
+    type: 'public',
+    ownerIds: [],
+    memberIds: [],
     columnOrderIds: [
       'column-id-01',
       'column-id-02',
       'column-id-03',
       'column-id-04',
-    ], // Thứ tự sắp xếp / vị trí của các Columns trong 1 boards
+    ],
     columns: [
       {
         _id: 'column-id-01',
