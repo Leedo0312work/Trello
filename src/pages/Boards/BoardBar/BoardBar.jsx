@@ -19,11 +19,11 @@ const MENU_STYLES = {
   paddingX: '5px',
   borderRadius: '4px',
   '.MuiSvgIcon-root': {
-    color: 'white',
+    color: 'white'
   },
   '&:hover': {
-    bgcolor: 'primary.50',
-  },
+    bgcolor: 'primary.50'
+  }
 }
 
 function BoardBar({ board }) {
@@ -31,15 +31,15 @@ function BoardBar({ board }) {
     <Box
       sx={{
         width: '100%',
-        height: (theme) => theme.trello.boardBarHeight,
+        height: theme => theme.trello.boardBarHeight,
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
         gap: 2,
         paddingX: 2,
         overflowX: 'auto', //Tinh chỉnh scrollbar cuộn over
-        bgcolor: (theme) =>
-          theme.palette.mode === 'dark' ? '#34495e' : '#255c8e',
+        bgcolor: theme =>
+          theme.palette.mode === 'dark' ? '#34495e' : '#255c8e'
       }}
     >
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
@@ -63,7 +63,7 @@ function BoardBar({ board }) {
           label="Add to Google Drive"
           clickable
         />
-        {/* <Chip
+        <Chip
           sx={MENU_STYLES}
           icon={<BoltIcon />}
           label="Automation"
@@ -74,7 +74,7 @@ function BoardBar({ board }) {
           icon={<FilterListIcon />}
           label="Filters"
           clickable
-        /> */}
+        />
       </Box>
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
         <Button
@@ -83,7 +83,7 @@ function BoardBar({ board }) {
           sx={{
             color: 'white',
             borderColor: 'white',
-            '&:hover': { borderColor: 'white' },
+            '&:hover': { borderColor: 'white' }
           }}
         >
           Invite
@@ -100,8 +100,8 @@ function BoardBar({ board }) {
               border: 'none',
               color: 'white',
               cursor: 'pointer',
-              '&:first-of-type': { bgcolor: '#a4b0be' },
-            },
+              '&:first-of-type': { bgcolor: '#a4b0be' }
+            }
           }}
         >
           <Tooltip title="Leedo">

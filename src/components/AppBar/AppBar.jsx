@@ -27,15 +27,15 @@ function AppBar() {
     <Box
       sx={{
         width: '100%',
-        height: (theme) => theme.trello.appBarHeight,
+        height: theme => theme.trello.appBarHeight,
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
         paddingX: 2,
         gap: 2,
         overflowX: 'auto', //Tinh chỉnh scrollbar
-        bgcolor: (theme) =>
-          theme.palette.mode === 'dark' ? '#2c3e50' : '#29669c',
+        bgcolor: theme =>
+          theme.palette.mode === 'dark' ? '#2c3e50' : '#29669c'
       }}
     >
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
@@ -65,8 +65,8 @@ function AppBar() {
               color: 'white',
               border: 'none',
               '&:hover': {
-                border: 'none',
-              },
+                border: 'none'
+              }
             }}
             variant="outlined"
             startIcon={<LibraryAddIcon />}
@@ -83,7 +83,7 @@ function AppBar() {
           type="text"
           size="small"
           value={searchValue}
-          onChange={(e) => setSearchValue(e.target.value)}
+          onChange={e => setSearchValue(e.target.value)}
           //Style cho input search
           InputProps={{
             startAdornment: (
@@ -91,7 +91,7 @@ function AppBar() {
                 <SearchIcon
                   sx={{
                     color: 'white',
-                    cursor: 'pointer',
+                    cursor: 'pointer'
                   }}
                 />
               </InputAdornment>
@@ -102,12 +102,12 @@ function AppBar() {
                   fontSize="small"
                   sx={{
                     color: searchValue ? 'white' : 'transparent',
-                    cursor: 'pointer',
+                    cursor: 'pointer'
                   }}
                   onClick={() => setSearchValue('')}
                 />
               </InputAdornment>
-            ),
+            )
           }}
           sx={{
             minWidth: '120px',
@@ -118,8 +118,8 @@ function AppBar() {
             '& .MuiOutlinedInput-root': {
               '& fieldset': { borderColor: 'white' },
               '&:hover fieldset': { borderColor: 'white' },
-              '&.Mui-focused fieldset': { borderColor: 'white' },
-            },
+              '&.Mui-focused fieldset': { borderColor: 'white' }
+            }
           }}
         />
 

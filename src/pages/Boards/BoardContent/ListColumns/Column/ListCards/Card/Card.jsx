@@ -18,10 +18,10 @@ function Card({ card }) {
     setNodeRef,
     transform,
     transition,
-    isDragging,
+    isDragging
   } = useSortable({
     id: card._id,
-    data: { ...card },
+    data: { ...card }
   })
   const dndKitCardStyles = {
     // touchAction:'none', //Dành cho sensor default dạng PointerSensor
@@ -31,7 +31,7 @@ function Card({ card }) {
     transition,
     opacity: isDragging ? 0.5 : undefined,
     border: isDragging ? '1px solid #2ecc71' : undefined,
-    borderRadius: '8px',
+    borderRadius: '8px'
   }
 
   const shouldShowCardAction = () => {
@@ -55,6 +55,8 @@ function Card({ card }) {
         display: card?.FE_PlaceholderCard ? 'none' : 'block',
         //overflow: card?.FE_PlaceholderCard ? 'hidden' : 'unset',
         //height: card?.FE_PlaceholderCard ? '0px' : 'unset',
+        border: '1px solid transparent',
+        '&:hover': { borderColor: theme => theme.palette.primary.main }
       }}
     >
       {card?.cover && <CardMedia sx={{ height: 140 }} image={card?.cover} />}
