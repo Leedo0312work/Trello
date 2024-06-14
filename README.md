@@ -31,7 +31,7 @@ npm install
 npm run dev
 ```
 
-4. Access the application in your web browser at [http://localhost:3000](http://localhost:3000).
+4. Access the application in your web browser at [http://localhost:5173](http://localhost:5173).
 
 ## Additional Scripts
 - `npm run build`: Builds the project for production.
