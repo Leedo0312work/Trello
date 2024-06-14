@@ -88,7 +88,12 @@ function AppBar() {
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
-                <SearchIcon sx={{ color: 'white' }} />
+                <SearchIcon
+                  sx={{
+                    color: 'white',
+                    cursor: 'pointer',
+                  }}
+                />
               </InputAdornment>
             ),
             endAdornment: (
