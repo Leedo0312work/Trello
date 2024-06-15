@@ -16,7 +16,7 @@ import {
   pointerWithin,
   getFirstCollision
 } from '@dnd-kit/core'
-import { MouseSensor, TouchSensor } from '~/customeLib/dndKitSensors'
+import { MouseSensor, TouchSensor } from '~/customeLib/dndkitSensors'
 
 import { arrayMove } from '@dnd-kit/sortable'
 import { useCallback, useEffect, useRef, useState } from 'react'
@@ -30,7 +30,7 @@ const ACTIVE_DRAG_ITEM_TYPE = {
   CARD: 'ACTIVE_DRAG_ITEM_TYPE_CARD'
 }
 
-function BoardContent({ board }) {
+function BoardContent({ board, createNewColumn, createNewCard }) {
   // https://docs.dndkit.com/api-documentation/sensors
   // Dùng PointerSensor mặc định thì kết hợp thuộc tính CSS touch-action: none ở những phần tử kéo thả
   // Require the mouse to move by 10 pixels before activating
@@ -388,7 +388,12 @@ function BoardContent({ board }) {
           p: '10px 0' //padding cho thanh scroll
         }}
       >
-        <ListColumns columns={orderedColumnsState} />
+        <ListColumns
+          columns={orderedColumnsState}
+          createNewColumn={createNewColumn}
+          createNewCard={createNewCard}
+        />
+
         <DragOverlay dropAnimation={customDropAnimation}>
           {!activeDragItemType && null}
           {activeDragItemType === ACTIVE_DRAG_ITEM_TYPE.COLUMN && (
