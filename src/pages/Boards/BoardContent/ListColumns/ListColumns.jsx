@@ -10,7 +10,6 @@ import {
 } from '@dnd-kit/sortable'
 import TextField from '@mui/material/TextField'
 import CloseIcon from '@mui/icons-material/Close'
-import theme from '~/theme'
 
 function ListColumns({ columns, createNewColumn, createNewCard }) {
   const [openNewColumnForm, setOpenNewColumnForm] = useState(false)
@@ -18,7 +17,7 @@ function ListColumns({ columns, createNewColumn, createNewCard }) {
 
   const [newColumnTitle, setNewColumnTitle] = useState('')
 
-  const addNewColumn = async () => {
+  const addNewColumn = () => {
     if (!newColumnTitle) {
       toast.error('Please enter column title!')
       return
@@ -28,7 +27,7 @@ function ListColumns({ columns, createNewColumn, createNewCard }) {
       title: newColumnTitle
     }
     //Call API
-    await createNewColumn(newColumnData)
+    createNewColumn(newColumnData)
 
     toggleOpenNewColumnForm()
     setNewColumnTitle('')
